@@ -21,6 +21,17 @@ tables and lists, please use the
 depends on this package.
 
 
+## Installation
+
+### Github 
+
+    devtools::install_github( "decisionpatterns/na.tools")
+    
+### CRAN 
+
+    install.packages("na.tools")
+
+
 ## Feature List
  
  * Over **50** functions for working with missing values (See [#Function List] below.) 
@@ -45,16 +56,6 @@ depends on this package.
  * `na.quantile`
    
    
-## Installation
-
-### Github 
-
-    devtools::install_github( "decisionpatterns/na.tools")
-    
-### CRAN 
-
-    install.packages("na.tools")
-
 
 ## Examples
 
@@ -118,7 +119,7 @@ containing the missing value(s) -- and only that vector.
 Missing values may have different values. Replacement values may (or may not) 
 be affected by the ording of the vector. Cummatative. The vectors here are 
 all *commutative*, i.e. they don't depend on the order of the vector. 
-*Non-cummative*, order dependent methods are common to time series data and are
+*Non-commutative*, order dependent methods are common to time series data and are
 found in the **na.ts.tools** package.
 
 (When imputing in a table, variable imputation is also called 
@@ -140,9 +141,10 @@ column. Table-based imputation is found in the **tidyimpute** package.)
 
 ## See Also 
 
-I number of other packages deal with missing values and imputation. Here is a
-short, incomplete list:
+A number of other packages have methods for working with missing values and 
+imputation. Here is a short, incomplete list:
 
 * [randomForest::na.roughfix()]
+* zoo
 
 
