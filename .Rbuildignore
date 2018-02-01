@@ -1,9 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^docs$
+^.git$
+^.git.orig$
 
 DESIGN.md
 TODO.md
 
-.git.orig
 
