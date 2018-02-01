@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^docs$
+
+DESIGN.md
+TODO.md
+
+.git.orig
+
