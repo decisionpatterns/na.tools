@@ -51,13 +51,12 @@ depends on this package.
    * Easy mnemonics: 
       * functions beginning with `na.` return a transformed version of the input vector.
   
+  
 ### Upcoming features
 
- * recall/track which values have been replaced
- * `na.quantile`
+ * recall/track which values have been replaced and how.
    
    
-
 ## Examples
 
     x <- 1:3
@@ -71,12 +70,13 @@ depends on this package.
     pct.na(x)
      
     na.rm(x)
-    
+      
     na.replace(x, 2) 
     na.replace(x, mean)
-    
+     
     na.zero(x)  
     na.mean(x)
+
 
 ## Function List 
 
@@ -142,10 +142,15 @@ column. Table-based imputation is found in the **tidyimpute** package.)
 
 ## See Also 
 
-A number of other packages have methods for working with missing values and 
-imputation. Here is a short, incomplete list:
+A number of other packages have methods for working with missing values and/or 
+imputation. Here is a short, incomplete and growing list:
 
-* [randomForest::na.roughfix()]
-* zoo
+* `randomForest::na.roughfix()` - imputes with `median`
+* `zoo::na.*` - collection of *non-commutative* imputation techniques for time series data.
+* [CRAN Task View: Multivariate Statistics](https://cran.r-project.org/web/views/Multivariate.html):
+
+> **mitools** provides tools for multiple imputation, mice provides multivariate imputation by chained equations **mvnmle** provides ML estimation for multivariate normal data with missing values, **mix** provides multiple imputation for mixed categorical and continuous data. **pan** provides multiple imputation for missing panel data. **VIM** provides methods for the visualisation as well as imputation of missing data. aregImpute() and transcan() from **Hmisc** provide further imputation methods. **monomvn** deals with estimation models where the missing data pattern is monotone.
+
+
 
 
