@@ -156,7 +156,7 @@ and no additional Missonve values introduced.</p>
     <pre class="examples"><div class='input'>
 </div><span class='co'># NOT RUN {</span>
   <span class='co'># Error</span>
-  <span class='fl'>1.01</span> <span class='kw'>%&gt;%</span> <span class='fu'>coerce_safe</span>(<span class='st'>"integer"</span>)  <span class='co'># 1.01 != 1</span>
+  <span class='fu'>coerce_safe</span>(<span class='fl'>1.01</span>, <span class='st'>"integer"</span>)  <span class='co'># 1.01 != 1</span>
   <span class='fu'>coerce_safe</span>( <span class='fu'>c</span>(<span class='st'>"1"</span>,<span class='st'>"2"</span>,<span class='st'>"a"</span>), <span class='st'>"integer"</span> )
 <span class='co'># }</span><div class='input'>
 </div></pre>

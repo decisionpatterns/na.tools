@@ -92,16 +92,18 @@
 
     <pre class="usage"><span class='fu'>all_na</span>(<span class='no'>x</span>)
 
+<span class='co'># S3 method for default</span>
+<span class='fu'>all_na</span>(<span class='no'>x</span>)
+
 <span class='co'># S3 method for na</span>
 <span class='fu'>all</span>(<span class='no'>x</span>)
 
 <span class='fu'>na.all</span>(<span class='no'>x</span>)
 
-<span class='co'># S3 method for na</span>
-<span class='fu'>any</span>()
+<span class='fu'>any_na</span>(<span class='no'>x</span>)
 
-<span class='co'># S3 method for na</span>
-<span class='fu'>any</span>()
+<span class='co'># S3 method for default</span>
+<span class='fu'>any_na</span>(<span class='no'>x</span>)
 
 <span class='fu'>na.any</span>(<span class='no'>x</span>)</pre>
     
@@ -120,10 +122,9 @@
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>These functions work on both atomic and recursive structures. See examples.
-    <code>all_na</code> reports if <strong>all</strong> values are missing. <code>all.na</code> is an alias of
-<code>all_na</code>.
-    <code>any_na</code> reports if <strong>any</strong> values are missing. <code>any.na</code> is an alias.</p>
+    <p>These are S3 Generics that provide default methods.
+    <code>all_na</code> reports if <strong>all</strong> values are missing.
+    <code>any_na</code> reports if <strong>any</strong> values are missing.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

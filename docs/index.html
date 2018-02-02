@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comprehensive Library for Working with Missing (NA) Values in Vectors. • na.tools</title>
+<title>Comprehensive Library for Working with Missing (NA) Values in Vectors • na.tools</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
@@ -72,6 +72,20 @@
 </ol>
 <p>In this package, there are methods for the detection, removal, replacement, imputation, recollection, etc. of missing values (<code>NAs</code>). This libraries focus is on vectors (atomics). For <strong>tidy</strong>/<strong>dplyr</strong> compliant methods operating on tables and lists, please use the <a href="https://github.com/decisionpatterns/tidyimpute">tidyimpute</a> package which depends on this package.</p>
 </div>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<div id="github" class="section level3">
+<h3 class="hasAnchor">
+<a href="#github" class="anchor"></a>Github</h3>
+<div class="sourceCode"><pre class="sourceCode R"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>( <span class="st">"decisionpatterns/na.tools"</span>)</code></pre></div>
+</div>
+<div id="cran" class="section level3">
+<h3 class="hasAnchor">
+<a href="#cran" class="anchor"></a>CRAN</h3>
+<div class="sourceCode"><pre class="sourceCode R"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"na.tools"</span>)</code></pre></div>
+</div>
+</div>
 <div id="feature-list" class="section level2">
 <h2 class="hasAnchor">
 <a href="#feature-list" class="anchor"></a>Feature List</h2>
@@ -105,20 +119,6 @@
 <li>recall/track which values have been replaced</li>
 <li><code>na.quantile</code></li>
 </ul>
-</div>
-</div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div id="github" class="section level3">
-<h3 class="hasAnchor">
-<a href="#github" class="anchor"></a>Github</h3>
-<div class="sourceCode"><pre class="sourceCode R"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>( <span class="st">"decisionpatterns/na.tools"</span>)</code></pre></div>
-</div>
-<div id="cran" class="section level3">
-<h3 class="hasAnchor">
-<a href="#cran" class="anchor"></a>CRAN</h3>
-<div class="sourceCode"><pre class="sourceCode R"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"na.tools"</span>)</code></pre></div>
 </div>
 </div>
 <div id="examples" class="section level2">
@@ -193,7 +193,7 @@ x[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="ot">NA_r
 <code>na.constant</code> : … constant value</li>
 </ul>
 <p><strong>Variable</strong></p>
-<p>In variable methods, the value is calculated from the vector containing the missing value(s) – and only that vector. Missing values may have different values. Replacement values may (or may not) be affected by the ording of the vector. Cummatative. The vectors here are all <em>commutative</em>, i.e. they don’t depend on the order of the vector. <em>Non-cummative</em>, order dependent methods are common to time series data and are found in the <strong>na.ts.tools</strong> package.</p>
+<p>In variable methods, the value is calculated from the vector containing the missing value(s) – and only that vector. Missing values may have different values. Replacement values may (or may not) be affected by the ording of the vector. Cummatative. The vectors here are all <em>commutative</em>, i.e. they don’t depend on the order of the vector. <em>Non-commutative</em>, order dependent methods are common to time series data and are found in the <strong>na.ts.tools</strong> package.</p>
 <p>(When imputing in a table, variable imputation is also called <em>column-based imputation</em> since replacement values derive from the single column. Table-based imputation is found in the <strong>tidyimpute</strong> package.)</p>
 <ul>
 <li>
@@ -222,9 +222,10 @@ x[<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="ot">NA_r
 <div id="see-also" class="section level2">
 <h2 class="hasAnchor">
 <a href="#see-also" class="anchor"></a>See Also</h2>
-<p>I number of other packages deal with missing values and imputation. Here is a short, incomplete list:</p>
+<p>A number of other packages have methods for working with missing values and imputation. Here is a short, incomplete list:</p>
 <ul>
 <li>[randomForest::na.roughfix()]</li>
+<li>zoo</li>
 </ul>
 </div>
 

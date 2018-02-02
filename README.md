@@ -1,10 +1,11 @@
 
 ## na.tools: Comprehensive Library for Working with Missing (NA) Values in Vectors
 
-[![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![CRAN](http://www.r-pkg.org/badges/version/na.tools)](https://cran.rstudio.com/web/packages/na.tools/index.html)
+<!--
+[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![CRAN](https://www.r-pkg.org/badges/version/na.tools)](https://cran.rstudio.com/web/packages/na.tools/index.html)
 [![Downloads](http://cranlogs.r-pkg.org/badges/na.tools?color=brightgreen)](http://www.r-pkg.org/pkg/na.tools)
-
+-->
 
 **na.tools** is a comprehensive library for handling missing (NA) values.
 It has several goals:

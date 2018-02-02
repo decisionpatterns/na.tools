@@ -160,7 +160,7 @@ referenced directly with <a href='NA_explicit_.html'>NA_explicit_</a>.</p>
   <span class='co'># Characters </span>
   <span class='no'>lets</span> <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>1</span>:<span class='fl'>5</span>]
   <span class='no'>lets</span>[ <span class='fu'>c</span>(<span class='fl'>2</span>,<span class='fl'>4</span>) ] <span class='kw'>&lt;-</span> <span class='fl'>NA</span>
-  <span class='no'>lets</span> <span class='kw'>%&gt;%</span> <span class='no'>na.replace</span></div><div class='output co'>#&gt; [1] "a"    "(NA)" "c"    "(NA)" "e"   </div><div class='input'>
+  <span class='fu'>na.replace</span>(<span class='no'>lets</span>)  <span class='co'># replace with NA_explicit_</span></div><div class='output co'>#&gt; [1] "a"    "(NA)" "c"    "(NA)" "e"   </div><div class='input'>
   <span class='co'># Factors </span>
   <span class='no'>fct</span> <span class='kw'>&lt;-</span> <span class='fu'>as.factor</span>( <span class='fu'>c</span>( <span class='fl'>NA</span>, <span class='no'>letters</span>[<span class='fl'>2</span>:<span class='fl'>4</span>], <span class='fl'>NA</span>) )
   <span class='no'>fct</span></div><div class='output co'>#&gt; [1] &lt;NA&gt; b    c    d    &lt;NA&gt;

@@ -90,7 +90,7 @@
     <p>Removes <code>NA</code> values from objects</p>
     
 
-    <pre class="usage"><span class='fu'>na.rm</span>(<span class='no'>object</span>)</pre>
+    <pre class="usage"><span class='fu'>na.rm</span>(<span class='no'>object</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -98,6 +98,10 @@
     <tr>
       <th>object</th>
       <td><p>to remove <code>NA</code>s from</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>further arguments special methods could require.</p></td>
     </tr>
     </table>
     
@@ -111,6 +115,8 @@ contain solely <code>NA</code> values.</p>
 
     <p>For <strong>vectors</strong> this is the same as <code><a href='http://www.rdocumentation.org/packages/stats/topics/na.fail'>stats::na.omit()</a></code> or
 <code><a href='http://www.rdocumentation.org/packages/stats/topics/na.fail'>stats::na.exclude()</a></code>. It will also work on recursive objects.</p>
+<p>This is predominantly maintained for syntactic convenience since a number of
+functions have na.omir</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
