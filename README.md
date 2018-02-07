@@ -47,7 +47,7 @@ depends on this package.
    * Replace using scalar, vector or function(s)
    * Replacement by constants values: `na.zero`, `na.inf`, `na.neginf`, `na.zero`
    * Imputation function for common statistics: `na.mean`, `na.median`, `na.max`, `na.min`, `na.quantile`, etc.
-   * Imputation by sampling: `na.sample`, `na.random`
+   * Imputation by sampling: `na.sample`, `na.random`, `na.bootstrap`
    * Easy mnemonics: 
       * functions beginning with `na.` return a transformed version of the input vector.
   
@@ -135,9 +135,10 @@ column. Table-based imputation is found in the **tidyimpute** package.)
  * `na.sample`/`na.random` - randomly sampled value
  
  
-**General**
+**General Imputation**
+
  * `na.replace`/`na.explicit` - atomic vectors only. General replacement function
- * `na.implicit` - turn explicit values to NAs
+ * `na.unreplace`/`na.implicit` - turn explicit values back into NAs
 
 
 ## See Also 

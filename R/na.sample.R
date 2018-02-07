@@ -44,3 +44,7 @@ na.random <- na.sample
 #' @rdname na.sample
 #' @export
 na.resample <- na.sample
+
+#' @rdname na.sample
+#' @export
+na.bootstrap <- na.sample

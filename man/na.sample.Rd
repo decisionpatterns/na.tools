@@ -4,6 +4,7 @@
 \alias{na.sample}
 \alias{na.random}
 \alias{na.resample}
+\alias{na.bootstrap}
 \title{na.sample}
 \usage{
 na.sample(.x, ...)
@@ -11,6 +12,8 @@ na.sample(.x, ...)
 na.random(.x, ...)
 
 na.resample(.x, ...)
+
+na.bootstrap(.x, ...)
 }
 \arguments{
 \item{.x}{vector with}

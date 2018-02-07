@@ -1,5 +1,7 @@
 ## TODO ##
 
+ - [ ] `rlang::is_na` conflicts with `na.tools::is_na`
+ 
  na.tools has two sets of functions dots and underscores. The dot functions have
  names with `.`  (na.replace, na.rm, na.*). Like their inspiration from the 
  stats package, they operate on atomic vectors. 
@@ -9,8 +11,6 @@
  recursive structures such as lists and table-like structures and closely follow 
  dplyr/tidyverse standards and behaviors. ( They will also work on atomic 
  objects.)  
- 
- - [ ] Create Logo **Circle Ban** of `NA`
  
  - [ ] `na[._]impute` as alias for `na[._]replace` respectively.
  
