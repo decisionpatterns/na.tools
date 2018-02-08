@@ -1,9 +1,3 @@
-#' Identify missing values
-#' 
-#' Return the indexes of those values that are missing 
-#' 
-#' @param x vector to search for missing values
-#' 
 #' @details 
 #' 
 #' `which_na` is implemented as `which( is.na(x) )`. 
@@ -26,27 +20,28 @@
 #'   
 #'   names(x) <- letters[1:6]
 #'   which_na(x)
-#'   
+#'  
+#' @rdname all_na 
 #' @export 
 
 which_na <- function(x) which( is.na(x) )
 
 
-#' @rdname which_na
-#' @aliases na.which
-#' @export
+# #' @rdname which_na
+# #' @aliases na.which
+# #' @export
+# 
+# na.which <- function(x) {
+#  message("'which_na' is preferred for vectors.")
+#  which_na(x)
+# }
 
-na.which <- function(x) {
- message("'which_na' is preferred for vectors.") 
- which_na(x) 
-}
 
-
-#' @rdname which_na
-#' @aliases na.which
-#' @export
-
-which.na <- function(x) {
-  warning("'which.na' is deprecated. Use 'which_na' instead.") 
-
-}
+# #' @rdname which_na
+# #' @aliases na.which
+# #' @export
+# 
+# which_na <- function(x) {
+#   warning("'which_na' is deprecated. Use 'which_na' instead.") 
+# 
+# }

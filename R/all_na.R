@@ -13,9 +13,6 @@
 #' @return 
 #'   logical scalar indicating if values are missing.
 #'   
-#' @seealso 
-#'  * [which.na()]
-#'
 #' @examples
 #' 
 #'   all_na( c( NA, NA, 1 ) )    # FALSE
@@ -27,28 +24,25 @@
 #'   df <- data.frame( char = rep(NA_character_, 3), nums=rep(NA_real_,3))
 #'   all_na(df)  # TRUE
 #'   
+#' @rdname all_na
 #' @export
 
 all_na <- function(x) UseMethod('all_na') 
 
+#' @rdname all_na
 #' @export 
-#' @rdname all_na 
 
 all_na.default <- function(x) all( is.na(x) )
 
 
-#' @rdname all_na 
-#' @export
-all.na <- function(x) { 
-  warning( "'all.na' is deprecated. Use 'all_na' instead." ) 
-  all_na
-}
+# #' @rdname all_na 
+# #' @export
+# all.na <- function(x) all_na
+# 
+# 
+#     
+# #' @rdname all_na 
+# #' @export
+# 
+# na.all <- function(x) all_na(x)
 
-    
-#' @rdname all_na 
-#' @export
-
-na.all <- function(x) {
-  warning( "'na.all' is deprecated. Use 'all_na' instead." )
-  all_na(x)
-}

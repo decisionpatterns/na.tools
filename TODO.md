@@ -41,7 +41,9 @@
  
  - [x] Rename `.na` to `.fun`? No, because it may not be a function.
 
- - Implement non-commutative rolling functions cf. `Rcpproll` packages
+ - Implement 
+   - Rolling window imputation: non-commutative rolling functions cf. `Rcpproll` packages
+   - Cumulative imputation(?):
 
 ### `coerce_safe`
 

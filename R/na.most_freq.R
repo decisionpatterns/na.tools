@@ -7,7 +7,7 @@
 #'   na.most_freq( c(1,1,NA,4) )
 #'   na.most_freq( c(1,1,4,4,NA) ) 
 #'
-#' @rdname impute-cummutative
+#' @rdname impute-commutative
 #' @md
 #' @export
 

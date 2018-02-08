@@ -29,6 +29,6 @@ functions have na.omir
 \seealso{
 \itemize{
 \item \code{\link[stats:na.omit]{stats::na.omit()}}, \code{\link[stats:na.exclude]{stats::na.exclude()}}
-\item \code{\link[=all.na]{all.na()}}
+\item \code{\link[=all_na]{all_na()}}
 }
 }

@@ -8,14 +8,14 @@
 #' @seealso 
 #'  * [base::max()] and [base::min()]
 #'
-#' @rdname impute-cummutative
+#' @rdname impute-commutative
 #' @export
 
 na.max <- function( .x, ... ) 
   na.replace(.x, .na=function(x) max(x, na.rm=TRUE ) )
 
 
-#' @rdname impute-cummutative 
+#' @rdname impute-commutative 
 #' @export
 
 na.min <- function( .x, ... ) 

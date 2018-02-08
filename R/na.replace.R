@@ -46,7 +46,7 @@
 #' then preceding with normal operations.          
 #'    
 #'    
-#' `na.explicit` is an alias for na.replace that uses [NA_explicit] for `.na``; 
+#' `na.explicit` is an alias for na.replace that uses [NA_explicit_] for `.na``; 
 #' it returns x unchanged if it cannot change the value.  
 #' 
 #' @return 

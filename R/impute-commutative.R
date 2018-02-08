@@ -1,4 +1,4 @@
-#' @name impute-cummutative
+#' @name impute-commutative
 #' @title Imputation by Cummutative Functions
 #' 
 #' Impute using replacement values calculated from a univariate, cummuative 
@@ -12,7 +12,7 @@
 #' 
 #' This collection of functions calculates a replacement value using an 
 #' unvariate function where the order of values in `x` do not matter, 
-#' i.e. cummutative.
+#' i.e. commutative.
 #' 
 #' 
 #' @return 
@@ -24,5 +24,6 @@
 #'  * [na.replace()] - used internally by these functions
 #'  * [na.constant()]
 #'  
-#' @rdname impute-cummutative
+#' @rdname impute-commutative
+
 NULL 

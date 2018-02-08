@@ -35,21 +35,22 @@ depends on this package.
 
 ## Feature List
  
- * Over **50** functions for working with missing values (See [#Function List] below.) 
+ * Over **70** functions for working with missing values (See [#Function List] below.) 
  * Standardizes and extends `na.*` functions found in the *stats* package.
- * Extensible
- * Calculate statistics on missing values: `na.n`, `na.pct`
- * Remove missing rows: `na.rm` 
+ * Extensible S3 methods
+ * Calculate statistics on missing values: `n_na`, `pct_na`
+ * Remove missing values: `na.rm` 
  * Replacement/Imputation:
-   * Two types of imputations: constant, univariate order-independent
-   * Type/class and length-safe replacement. (**na.tools** will never change 
+   * Type/class and length-safe replacement. (**na.tools** will never change the length or class of its argument.)
      produce an object with a different length/nrow or type/class of its target.)
+   * Three types of imputations: 
+     * constant
+     * univariate commutative (order-independent)
+     * univariate mom-commutative (order-dependent), e.g time series data
    * Replace using scalar, vector or function(s)
-   * Replacement by constants values: `na.zero`, `na.inf`, `na.neginf`, `na.zero`
-   * Imputation function for common statistics: `na.mean`, `na.median`, `na.max`, `na.min`, `na.quantile`, etc.
-   * Imputation by sampling: `na.sample`, `na.random`, `na.bootstrap`
-   * Easy mnemonics: 
-      * functions beginning with `na.` return a transformed version of the input vector.
+  * Easy mnemonics: 
+      * functions beginning with `na.` return a transformed version of the 
+        input vector with missing values imputes/
   
   
 ### Upcoming features
@@ -62,21 +63,23 @@ depends on this package.
     x <- 1:3
     x[2] <- NA_real_
      
-    any.na(x)
-    all.na(x)
-    which.na(x)
+    any_na(x)
+    all_na(x)
+    which_na(x)
      
-    n.na(x)
-    pct.na(x)
+    n_na(x)
+    pct_na(x)
      
     na.rm(x)
       
     na.replace(x, 2) 
-    na.replace(x, mean)
+    na.replace(x, mean)     # error
+    na.replace(x, na.mean)  # Works
      
     na.zero(x)  
     na.mean(x)
-
+     
+    na.cumsum(x)
 
 ## Function List 
 
@@ -94,15 +97,15 @@ depends on this package.
 ### Removal / Ommision / Exclusion 
 
  * `na.rm` - remove `NA`s  (with tables is equivalent to `drop_cols_all_na` )
- * `na.trim` - remove `NA`s from beginning or end (order matters)
+ * `na.trim` - remove `NA`s from beginning or end (non-commutative/order matters)
  
  
 ### Replacement / Imputation ###
 
-There are thwo types of imputation methods for plain vectors. They are 
+There are two types of imputation methods for plain vectors. They are 
 distinguished by their replacement values. 
 
-**Constant**
+#### Imputation by constant
 
 In "constant" imputation methods, missing values are replaced by an 
 *a priori* selected constant value. No calculation are performed to derive 
@@ -110,20 +113,24 @@ replacement values and all missing value assume the same transformied value.
 
  * `na.zero` : Replace `NA`s with  0
  * `na.inf` / `na.neginf` : ... `Inf` / `-Inf`
- * `na.constant` : ... constant value
+ * `na.constant` : constant value `.na`
 
 
-**Variable**
+#### Imputation by function 
 
-In variable methods, the value is calculated from the vector
+In functional imputation, the value is calculated from the vector
 containing the missing value(s) -- and only that vector. 
-Missing values may have different values. Replacement values may (or may not) 
-be affected by the ording of the vector. Cummatative. The vectors here are 
-all *commutative*, i.e. they don't depend on the order of the vector. 
-*Non-commutative*, order dependent methods are common to time series data and are
-found in the **na.ts.tools** package.
+Missing values may impute to different values. Replacement values may (or may not) 
+be affected by the ording of the vector. 
 
-(When imputing in a table, variable imputation is also called 
+
+**Cummatative functions** 
+
+Commutative functions provide the same result irregarless of the ordering of 
+the input vectors. Therefore, these functions do not depend on the ordering
+of elements of the input vector. 
+
+(When imputing in a table, imputation by function is also called 
 *column-based imputation* since replacement values derive from the single 
 column. Table-based imputation is found in the **tidyimpute** package.)
 
@@ -134,8 +141,15 @@ column. Table-based imputation is found in the **tidyimpute** package.)
  * `na.quantile` - quantile value
  * `na.sample`/`na.random` - randomly sampled value
 
-** Variable (ordered) **s
+
+** Non-commulative functions  **s
  
+ * `na.cummax` - cumulative max
+ * `na.cummin` - cumulative min
+ * `na.cumsum` - cumulative sum
+ * `na.cumprod` - cumulative prod
+ 
+
 **General Imputation**
 
  * `na.replace`/`na.explicit` - atomic vectors only. General replacement function

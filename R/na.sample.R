@@ -1,4 +1,4 @@
-#' na.sample
+#' na.bootstrap
 #' 
 #' Replace missing values with value randomly drawn from x
 #' 
@@ -14,37 +14,37 @@
 #' The default is to replace bv sampling a population defined by the 
 #' non-missing values of `.x` **with replacement** 
 #'  
-#' `na.random` is an alias for `na.sample`.
+#' `na.random` is an alias for `na.bootstrap`.
 #' `
 #' @seealso 
 #'  * [base::sample()]
 #' 
 #' 
-#' @note `na.sample` is **non-deterministic**. Use 
+#' @note `na.bootstrap` is **non-deterministic**. Use 
 #'       [base::set.seed()] to make it deterministic
 #' 
 #' @examples
 #'   x <- c(1,NA,3)
-#'   na.sample(x)
+#'   na.bootstrap(x)
 #'   
 #' @export
 
-na.sample <- function(.x, ... ) { 
+na.bootstrap <- function(.x, ... ) { 
   # args() <- list( x=.x, replace=TRUE )   # Need this because more values might be needed than available
   # new_args <- modifyList( args, list(...) )
   na.replace( .x, .na=function(x, ...) sample( na.omit(x), replace=TRUE, ...) ) 
 }
 
               
-#' @rdname na.sample
-#' @export
-na.random <- na.sample
+# #' @rdname na.bootstrap
+# #' @export
+# na.random <- na.bootstrap
 
 
-#' @rdname na.sample
+#' @rdname na.bootstrap
 #' @export
-na.resample <- na.sample
+na.resample <- na.bootstrap
 
-#' @rdname na.sample
-#' @export
-na.bootstrap <- na.sample
+# #' @rdname na.bootstrap
+# #' @export
+# na.sample <- na.bootstrap

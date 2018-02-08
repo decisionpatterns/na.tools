@@ -7,7 +7,7 @@
 \usage{
 na.replace(x, .na, ...)
 
-na.explicit(x, .na, ...)
+na.explicit(x)
 }
 \arguments{
 \item{x}{vector in which \code{NA} values are to be replaced.}
@@ -26,10 +26,10 @@ Replaces \code{NA} values with explicit values.
 \details{
 \code{na.replace} replaces missing values in \code{x} by \code{.na} if possible.
 
-In R, replacement of values can cause the class/type of to change. This is
-not often desired behavior. By contrast, \code{na.replace} replaces values in
-class/type-safe and length-safe ways. The result is guaranteed to be the
-same class/type and length of \code{x} regardless of the value of \code{.na}.
+In R, replacement of values can cause a change in the class/type of an object.
+This is not often desired. \code{na.replace} is class/type-safe and length-safe.
+It replaces missing values without changing the \code{x}'s class or length
+regardless of the value provided by \code{.na}.
 
 \strong{Param: \code{x}}
 
@@ -48,14 +48,15 @@ If \code{x} is a \strong{factor}, unique values of \code{.na} not in already pre
 
 If a \strong{scalar}, each missing value of \code{x} is replaced by \code{na}.
 
-If a \strong{vector}, \code{.na} must have length(x)\code{. Missing values of}x\code{are replaced by corresponding elements of}.na\code{. Recycling values of}.na\code{is not performed. An error will be thrown in the event that}length(.na)\code{is not}1\code{or}length(x)\code{.}
+If a \strong{vector}, \code{.na} must have length(x)\code{. Missing values of}x\code{are replaced by corresponding elements of}.na\code{. Recycling values of}.na\code{is not allowed. An error will be thrown in the event that}length(.na)\code{is not}1\code{or}length(x)\code{.}
 
-If a \strong{function}, \code{x} is transformed by .na` with:\preformatted{     .na( na.omit(x) )
+If a \strong{function}, \code{x} is transformed by .na` with:\preformatted{     .na(x, ...)
 }
 
 then preceding with normal operations.
 
-\code{na.explicit} is an alias for na.replace that is likely to be deprecated.
+\code{na.explicit} is an alias for na.replace that uses \link{NA_explicit_} for `.na``;
+it returns x unchanged if it cannot change the value.
 }
 \examples{
 

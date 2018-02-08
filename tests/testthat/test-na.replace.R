@@ -23,6 +23,7 @@ test_that("na.replace-continuous-integer", {
   
   v <- 1:4
   v[ c(2,4) ] <- NA_integer_
+  
   ans <-  c(1,2,3,2)
   v %>% na.replace(2) %T>% 
     expect_is("integer") %>% 

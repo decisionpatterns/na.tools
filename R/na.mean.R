@@ -3,7 +3,7 @@
 #' `mean(x, na.rm=TRUE, ... )` is used. If mean cannot be calculated (e.g. x 
 #'  isn't numeric) then `x` is returned with a warning.
 #' 
-#' @rdname impute-cummutative
+#' @rdname impute-commutative
 #' @export
 
 na.mean <- function( .x, ... ) 

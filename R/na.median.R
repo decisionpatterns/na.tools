@@ -7,7 +7,7 @@
 #' @examples 
 #'   na.median( c(1,2,NA_real_,3) )
 #'       
-#' @rdname impute-cummutative
+#' @rdname impute-commutative
 #' @import stats 
 #' @export
 
@@ -26,7 +26,7 @@ na.median <- function( .x, ... )
 #' @examples
 #'   na.quantile( c(1,2,NA_real_,3), prob=0.4 )
 #' 
-#' @rdname impute-cummutative
+#' @rdname impute-commutative
 #' @export
 
 na.quantile <- function(.x, ... ) 

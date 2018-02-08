@@ -20,7 +20,7 @@
 #' 
 #' @seealso 
 #'   * [stats::na.omit()], [stats::na.exclude()]
-#'   * [all.na()]
+#'   * [all_na()]
 #'   
 #' @md   
 #' @importFrom stats na.omit
