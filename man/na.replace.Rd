@@ -7,7 +7,7 @@
 \usage{
 na.replace(x, .na, ...)
 
-na.explicit(x, .na)
+na.explicit(x, .na, ...)
 }
 \arguments{
 \item{x}{vector in which \code{NA} values are to be replaced.}

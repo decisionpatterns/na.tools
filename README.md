@@ -133,7 +133,8 @@ column. Table-based imputation is found in the **tidyimpute** package.)
  * `na.median` - median value
  * `na.quantile` - quantile value
  * `na.sample`/`na.random` - randomly sampled value
- 
+
+** Variable (ordered) **s
  
 **General Imputation**
 

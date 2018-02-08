@@ -40,7 +40,9 @@
  - `na.impute`(?) 
  
  - [x] Rename `.na` to `.fun`? No, because it may not be a function.
- 
+
+ - Implement non-commutative rolling functions cf. `Rcpproll` packages
+
 ### `coerce_safe`
 
  - [ ] Handle **ALL NA** columns

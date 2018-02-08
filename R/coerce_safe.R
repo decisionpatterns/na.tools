@@ -1,3 +1,4 @@
+
 #' coerce_safe
 #' 
 #' Coerce values in a safe, non-destructive and consistent way.

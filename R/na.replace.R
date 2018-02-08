@@ -11,10 +11,10 @@
 #' 
 #' `na.replace` replaces missing values in `x` by `.na` if possible.
 #' 
-#' In R, replacement of values can cause the class/type of to change. This is 
-#' not often desired behavior. By contrast, `na.replace` replaces values in 
-#' class/type-safe and length-safe ways. The result is guaranteed to be the 
-#' same class/type and length of `x` regardless of the value of `.na`. 
+#' In R, replacement of values can cause a change in the class/type of an object. 
+#' This is not often desired. `na.replace` is class/type-safe and length-safe. 
+#' It replaces missing values without changing the `x`'s class or length 
+#' regardless of the value provided by `.na`. 
 #' 
 #' **Param: `x`** 
 #' 
@@ -36,17 +36,18 @@
 #' 
 #' If a **vector**, `.na` must have length(x)`. Missing values of `x` are replaced 
 #' by corresponding elements of `.na`.  Recycling values of `.na` is not 
-#' performed. An error will be thrown in the event that `length(.na)` is not `1`
+#' allowed. An error will be thrown in the event that `length(.na)` is not `1`
 #' or `length(x)`.`  
 #'    
 #' If a **function**, `x` is transformed by .na` with:
 #' ````
-#'      .na( na.omit(x) )
+#'      .na(x, ...)
 #' ````    
 #' then preceding with normal operations.          
 #'    
 #'    
-#' `na.explicit` is an alias for na.replace that is likely to be deprecated.  
+#' `na.explicit` is an alias for na.replace that uses [NA_explicit] for `.na``; 
+#' it returns x unchanged if it cannot change the value.  
 #' 
 #' @return 
 #' A vector with the class and length of `x`.  
@@ -158,9 +159,11 @@ na.replace.default <- function(x, .na, ...) {
 # Replacement with factors requires managing new-levels  
 na.replace.factor <- function( x, .na=NA_explicit_, ... ) { 
 
-  # When .na is a function, apply is
-  if( is.function(.na) ) .na <- .na( na.omit(x) )
+  # When .na is a function, we don't know what the replacement values are ...
+  # We must call that function to get the replacement values. 
+  if( is.function(.na) ) .na <- .na(x, ...)
     
+  # If there are new levels, generate them
   new_levels <- setdiff( unique(.na), levels(x) ) 
   
   if( length(new_levels) > 0 ) { 
@@ -188,7 +191,6 @@ na.replace.character <- function( x, .na=NA_explicit_, ... )
 #' @rdname na.replace
 #' @export
 
-na.explicit <- function(x, .na ) {
-  warning( "na.replace has been renamed to na.replace. Please change your code.")
-  na.replace(x, .na)
+na.explicit <- function(x) {
+  na.replace(x, .na=NA_explicit_ )
 }
