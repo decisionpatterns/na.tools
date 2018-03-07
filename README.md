@@ -1,10 +1,12 @@
 
 ## na.tools: Comprehensive Library for Working with Missing (NA) Values in Vectors
 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/na.tools)](https://cran.r-project.org/package=na.tools)
+[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
+[![Downloads](https://cranlogs.r-pkg.org/badges/na.tools?color=brightgreen)](https://www.r-pkg.org/pkg/na.tools)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/na.tools)](https://CRAN.R-project.org/package=na.tools)
 <!--
-[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![CRAN](https://www.r-pkg.org/badges/version/na.tools)](https://cran.rstudio.com/web/packages/na.tools/index.html)
-[![Downloads](http://cranlogs.r-pkg.org/badges/na.tools?color=brightgreen)](http://www.r-pkg.org/pkg/na.tools)
+[![software impact](http://depsy.org/api/package/r/na.tools/badge.svg)](http://depsy.org/package/r/na.tools)
 -->
 
 **na.tools** is a comprehensive library for handling missing (NA) values.
