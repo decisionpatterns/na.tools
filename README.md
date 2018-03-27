@@ -114,6 +114,7 @@ In "constant" imputation methods, missing values are replaced by an
 replacement values and all missing value assume the same transformied value.
 
  * `na.zero` : Replace `NA`s with  0
+ * `na.true` | `na.false` : ... `TRUE`
  * `na.inf` / `na.neginf` : ... `Inf` / `-Inf`
  * `na.constant` : constant value `.na`
 
