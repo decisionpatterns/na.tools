@@ -1,6 +1,6 @@
 #' @details 
 #' 
-#' `na_zero` replaces missing values with `0` which gets coerced to the 
+#' `na.zero` replaces missing values with `0` which gets coerced to the 
 #' `class(x)` as needed. 
 #' 
 #' @examples 

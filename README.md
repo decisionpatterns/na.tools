@@ -163,7 +163,7 @@ imputation. Here is a short, incomplete and growing list:
 
 * `randomForest::na.roughfix()` - imputes with `median`
 * `zoo::na.*` - collection of *non-commutative* imputation techniques for time series data.
-* [CRAN Task View: Multivariate Statistics](https://cran.r-project.org/web/views/Multivariate.html):
+* [CRAN Task View: Multivariate Statistics](https://CRAN.R-project.org/view=Multivariate):
 
 > **mitools** provides tools for multiple imputation, mice provides multivariate imputation by chained equations **mvnmle** provides ML estimation for multivariate normal data with missing values, **mix** provides multiple imputation for mixed categorical and continuous data. **pan** provides multiple imputation for missing panel data. **VIM** provides methods for the visualisation as well as imputation of missing data. aregImpute() and transcan() from **Hmisc** provide further imputation methods. **monomvn** deals with estimation models where the missing data pattern is monotone.
 

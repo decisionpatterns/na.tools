@@ -59,7 +59,8 @@ coerce_safe <- function(object, class, alert=stop, ..., alert_irreversible=alert
     
     # Test NAs introduced
     if( any( is.na(object) != is.na(res) ) )
-      stop( "Coercion to '", class, "' introduced ", na.n(res) - na.n(object), " additional missing value(s) (NA)." )
+      stop( "Coercion of '", object, "' to class '", class, "' is not possible.")
+      # stop( "Coercion to '", class, "' introduced ", na.n(res) - na.n(object), " additional missing value(s) (NA)." )
     
   }
   

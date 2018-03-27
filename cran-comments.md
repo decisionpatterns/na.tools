@@ -1,3 +1,8 @@
+## Version 0.2.1
+
+ * README.md: Fix canonical link to multivariate task view
+ * Remove tools directory from task view
+
 ## Version 0.2.0 
 
  * Removed (some) unused aliases

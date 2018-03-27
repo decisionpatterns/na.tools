@@ -67,10 +67,13 @@ qw <- function (...)
   as.character(match.call())[-1]
 
 
-# @author decision patterns / christopher brown
+# mode of a object
+# 
+# @keywords internal
+# @author decision patterns / christopher brown 
 # Taken from the dimensional package with permission  
+# 
 
 most_freq <- function (x, na.action = na.pass) 
   as(names(which.max(table(na.action(x), useNA = "always"))), class(x))
 
-  

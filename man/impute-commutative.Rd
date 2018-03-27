@@ -8,6 +8,7 @@
 \alias{na.mean}
 \alias{na.median}
 \alias{na.quantile}
+\alias{na.mode}
 \alias{na.most_freq}
 \title{Imputation by Cummutative Functions
 
@@ -23,6 +24,8 @@ na.mean(.x, ...)
 na.median(.x, ...)
 
 na.quantile(.x, ...)
+
+na.mode(.x, ...)
 
 na.most_freq(.x, ...)
 }
@@ -59,11 +62,16 @@ minimum \emph{of non-missing values \code{x}.}
 \code{mean(x, na.rm=TRUE, ... )} is used. If mean cannot be calculated (e.g. x
 isn't numeric) then \code{x} is returned with a warning.
 
-\code{na.quantile} imputes with a quantile given by the \code{prob} argument that is
-passed to \code{\link[=quantile]{quantile()}}
+\code{na.quantile} imputes with a quantile. The quantile is specified by a
+\code{probs} argument that is passed to \code{\link[stats:quantile]{stats::quantile()}}. If \code{probs} can be
+a scalar value in which all values are replaced by that quantile or a vector
+of \code{length(.x)} values which replaces the missing values of x with the
+\code{probs}. The ability to provide a vector may be deprecated in the future.
 
-\code{na.most_freq} replaces all \code{NA} with the most frequently occuring value. In
+\code{na.mode} replaces all \code{NA} with the most frequently occuring value. In
 the event of ties, the value encounter first is listed first is used.
+
+\code{na.most_freq} is an alias for \code{na.mode} since the underlying function
 }
 \examples{
   na.median( c(1,2,NA_real_,3) )

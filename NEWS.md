@@ -1,3 +1,13 @@
+## Version 0.3.0 
+
+ * add `na.true` and `na.false`
+
+
+## Version 0.2.1
+
+ * README.md: Fix canonical link to multivariate task view
+ * Remove tools directory from task view
+
 ## Version 0.2.0
 
  * Add `NA_explicit_` as an exported constant for explicit categorical values.

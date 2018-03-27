@@ -17,12 +17,15 @@ na.median <- function( .x, ... )
 
 #' @details 
 #' 
-#' `na.quantile` imputes with a quantile given by the `prob` argument that is 
-#' passed to [quantile()]
+#' `na.quantile` imputes with a quantile. The quantile is specified by a 
+#' `probs` argument that is passed to [stats::quantile()]. If `probs` can be 
+#' a scalar value in which all values are replaced by that quantile or a vector 
+#' of `length(.x)` values which replaces the missing values of x with the 
+#' `probs`. The ability to provide a vector may be deprecated in the future.
 #'   
-#' @seealso 
+#' @seealso
 #'   * [quantile()]
-#'   
+#'
 #' @examples
 #'   na.quantile( c(1,2,NA_real_,3), prob=0.4 )
 #' 
@@ -30,4 +33,4 @@ na.median <- function( .x, ... )
 #' @export
 
 na.quantile <- function(.x, ... ) 
-  na.replace( .x, .na=function(x,...) quantile(x, na.rm=TRUE, ... ) )
+  na.replace( .x, .na=quantile(.x, na.rm=TRUE, ... ) )
