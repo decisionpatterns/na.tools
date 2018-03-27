@@ -1,7 +1,18 @@
 ## TODO ##
 
+ - [ ] 
+
  - [ ] `rlang::is_na` conflicts with `na.tools::is_na`
- 
+
+ - [ ] For functions like `na.mode` how should ties be resolved?
+       - most_freq
+       - random 
+       - first
+       - specified
+       - by objective function
+
+## Considering
+
  na.tools has two sets of functions dots and underscores. The dot functions have
  names with `.`  (na.replace, na.rm, na.*). Like their inspiration from the 
  stats package, they operate on atomic vectors. 

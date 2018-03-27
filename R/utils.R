@@ -63,7 +63,7 @@ kv.default <- function(x) {
 
 # @author decision patterns / christopher brown
 # Taken from the base.tools package with permission 
-qw <- function (...) 
+qc <- function (...) 
   as.character(match.call())[-1]
 
 
@@ -76,4 +76,3 @@ qw <- function (...)
 
 most_freq <- function (x, na.action = na.pass) 
   as(names(which.max(table(na.action(x), useNA = "always"))), class(x))
-

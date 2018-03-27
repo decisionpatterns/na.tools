@@ -3,11 +3,11 @@
 #' `na.mode` replaces all `NA` with the most frequently occuring value. In 
 #' the event of ties, the value encounter first is listed first is used.
 #' 
-#' `na.most_freq` is an alias for `na.mode` since the underlying function
+#' `na.most_freq` is an alias for `na.mode`.
 #' 
 #' @examples 
-#'   na.most_freq( c(1,1,NA,4) )
-#'   na.most_freq( c(1,1,4,4,NA) ) 
+#'   na.mode( c(1,1,NA,4) )
+#'   na.mode( c(1,1,4,4,NA) ) 
 #'
 #' @rdname impute-commutative
 #' @md
