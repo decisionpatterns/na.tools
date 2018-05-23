@@ -13,11 +13,11 @@
 It has several goals:
 
 1. extend existing `stats::na.*()` functions, 
-2. collect all functions for working with missing data together, and 
+2. provide a collection for all functions for working with missing data together, and 
 3. provide a consistent and intuitive interface. 
 
 In this package, there are methods for the detection, removal, replacement, 
-imputation, recollection, etc. of missing values (`NAs`). This libraries focus 
+--imputation--, *recollection*, etc. of missing values (`NAs`). This libraries focus 
 is on vectors (atomics). For **tidy**/**dplyr** compliant methods operating on
 tables and lists, please use the 
 [tidyimpute](https://github.com/decisionpatterns/tidyimpute) package which 
