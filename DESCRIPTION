@@ -6,7 +6,6 @@ Authors@R: c(
     person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
     person("Decision Patterns", role = "cph")
     )
-URL: https://github.com/decisionpatterns/na.tools
 Description: 
     This comprehensive toolkit provide a consistent and 
     extensible framework for working with missing values in vectors. The 
@@ -14,7 +13,8 @@ Description:
     and table-like structures).
     Functions exist for detection, removal, replacement, imputation, 
     recollection, etc. of 'NAs'.
-BugReports: https://github.com/decisionpatterns/na.actions/issues
+URL: https://github.com/decisionpatterns/na.tools
+BugReports: https://github.com/decisionpatterns/na.tools/issues
 Depends:
     R (>= 3.1.0)
 Imports:

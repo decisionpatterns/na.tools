@@ -1,7 +1,7 @@
 #' @details 
 #' 
 #' `na.mode` replaces all `NA` with the most frequently occuring value. In 
-#' the event of ties, the value encounter first is listed first is used.
+#' the event of ties, the value encounter first in `.x` is used.
 #' 
 #' `na.most_freq` is an alias for `na.mode`.
 #' 

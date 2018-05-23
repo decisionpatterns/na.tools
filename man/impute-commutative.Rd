@@ -69,7 +69,7 @@ of \code{length(.x)} values which replaces the missing values of x with the
 \code{probs}. The ability to provide a vector may be deprecated in the future.
 
 \code{na.mode} replaces all \code{NA} with the most frequently occuring value. In
-the event of ties, the value encounter first is listed first is used.
+the event of ties, the value encounter first in \code{.x} is used.
 
 \code{na.most_freq} is an alias for \code{na.mode}.
 }
