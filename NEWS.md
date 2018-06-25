@@ -1,3 +1,8 @@
+## Version 0.3.1
+
+ * Add `NA_logical`
+ * Remove **magrittr** dependency of tests
+
 ## Version 0.3.0 
 
  * add `na.true` and `na.false`
