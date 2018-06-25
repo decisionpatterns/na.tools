@@ -1,6 +1,4 @@
-library(testthat)
-library(na.tools)
-library(magrittr)
+# test-na.mode.R
 
 context("na.mode")
 
@@ -14,9 +12,9 @@ test_that("na.mode-continuous-integer", {
   
  # REPLACE with FUNCTION 
   ans <- c(1,1,3,1)
-  v %>% na.mode %T>% 
-    expect_is("integer") %>% 
-    expect_equal(ans)   
+  v ->.; na.mode(.)  ->.;  
+    expect_is(., "integer") 
+    expect_equal(., ans)   
    
 # REPLACE by non-consistent class/type
   # expect_error( v %>% na.mode("a") )
@@ -35,9 +33,9 @@ test_that("na.mode-continuous-integer", {
   
 # REPLACE with FUNCTION
   ans <- c(1,1,3,1)
-  v %>% na.mode %T>%
-    expect_is("numeric") %>%
-    expect_equal(ans)    # 1 2 3 2
+  v ->.; na.mode(.)  ->.; 
+    expect_is(., "numeric")
+    expect_equal(.,ans)    # 1 2 3 2
 
    
 # REPLACE with non-consistent class/type
@@ -55,8 +53,8 @@ test_that("na.mode-continuous-integer", {
   x[ c(2,4) ] <- NA
   
   ans <- c('a','a','c','a')
-  x %>% na.mode %T>% 
-    expect_is("character") %>%
-    expect_equal(ans)
+  x ->.; na.mode(.)  ->.;  
+    expect_is(., "character")
+    expect_equal(., ans)
   
 })

@@ -4,8 +4,8 @@
 #' respectively.  
 #' 
 #' @examples 
-#'   na.true( c(T,NA,F) )   # T T F
-#'   na.false( c(T,NA,F) )  # T F F
+#'   na.true( c(TRUE, NA_logical, FALSE) )   # T T F
+#'   na.false( c(TRUE, NA_logical, FALSE) )  # T F F
 #' 
 #' @examples 
 #'  

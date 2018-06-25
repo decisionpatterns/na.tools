@@ -61,8 +61,8 @@ respectively.
   na.inf( c( 1, 2, NA, 4) )
   na.neginf( c( 1, 2, NA, 4) ) 
   
-  na.true( c(T,NA,F) )   # T T F
-  na.false( c(T,NA,F) )  # T F F
+  na.true( c(TRUE, NA_logical, FALSE) )   # T T F
+  na.false( c(TRUE, NA_logical, FALSE) )  # T F F
 
  
            

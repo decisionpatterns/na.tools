@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 [![Downloads](https://cranlogs.r-pkg.org/badges/na.tools?color=brightgreen)](https://www.r-pkg.org/pkg/na.tools)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/na.tools)](https://CRAN.R-project.org/package=na.tools)
+
 <!--
 [![software impact](http://depsy.org/api/package/r/na.tools/badge.svg)](http://depsy.org/package/r/na.tools)
 -->

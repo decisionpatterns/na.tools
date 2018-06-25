@@ -1,7 +1,3 @@
-library(testthat)
-library(na.tools)
-library(magrittr)
-
 context("na.mean")
 
 context(".. continous-integer")
@@ -14,9 +10,9 @@ test_that("na.mean-continuous-integer", {
   
  # REPLACE with FUNCTION 
   ans <- c(1,2,3,2)
-  v %>% na.mean %T>% 
-    expect_is("integer") %>% 
-    expect_equal(ans)    # 1 2 3 2    
+  v ->.; na.mean(.)  ->.;  
+    expect_is(., "integer")  
+    expect_equal(., ans)    
    
 # REPLACE by non-consistent class/type
   # expect_error( v %>% na.mean("a") )
@@ -35,9 +31,9 @@ test_that("na.mean-continuous-integer", {
   
 # REPLACE with FUNCTION
   ans <- c(1,2,3,2)
-  v %>% na.mean %T>%
-    expect_is("numeric") %>%
-    expect_equal(ans)    # 1 2 3 2
+  v ->.; na.mean(.)  ->.; 
+    expect_is(., "numeric")
+    expect_equal(., ans)
 
    
 # REPLACE with non-consistent class/type
@@ -54,10 +50,10 @@ test_that("na.mean-continuous-integer", {
   x <- letters[1:4]
   x[ c(2,4) ] <- NA
   
-  expect_warning( ans <- x %>% na.mean() ) 
+  expect_warning( ans <- na.mean(x) ) 
   
-  ans %T>% 
-    expect_is("character") %>%
-    expect_equal(x)
+  ans   ->.;  
+    expect_is(., "character") 
+    expect_equal(., x)
   
 })
