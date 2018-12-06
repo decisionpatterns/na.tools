@@ -42,13 +42,16 @@ If \code{x} is a \strong{factor}, unique values of \code{.na} not in already pre
 \code{levels(x)} will be added. They are appended silently unless
 \code{getOption('verbose')==TRUE} in which a message reports the added levels.
 
+If \code{x} is \strong{logical}, replacing with a non-logical value, e.g. using
+\code{na.explicit} will cause the type to change to factor.
+
 \strong{Param: \code{.na}}
 
 \code{.na} can be either a scalar, vector or function.
 
 If a \strong{scalar}, each missing value of \code{x} is replaced by \code{na}.
 
-If a \strong{vector}, \code{.na} must have length(x)\code{. Missing values of}x\code{are replaced by corresponding elements of}.na\code{. Recycling values of}.na\code{is not allowed. An error will be thrown in the event that}length(.na)\code{is not}1\code{or}length(x)\code{.}
+If a \strong{vector}, \code{.na} must have length(x)\code{. Missing values of }x\code{are replaced  by corresponding elements of}.na\code{.  Recycling values of }.na\code{is not  allowed. An error will be thrown in the event that}length(.na)\code{is not}1\code{or}length(x)\code{.}
 
 If a \strong{function}, \code{x} is transformed by .na` with:\preformatted{     .na(x, ...)
 }
@@ -80,7 +83,13 @@ it returns x unchanged if it cannot change the value.
   na.replace(fct, "z")  # z b c d z  -- level z added
   na.replace(fct, letters[1:5] )
   na.replace(fct)
-     
+  
+  # Logical 
+  x <- c(TRUE, FALSE, NA)
+  na.replace(x, .na=TRUE )
+  na.replace(x, .na="MISSING")
+  na.explicit(x)    
+  
  \dontrun{
    na.replace( rep(NA,3), rep(NA,3) )
  }

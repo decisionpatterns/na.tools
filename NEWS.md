@@ -1,3 +1,8 @@
+## Version 0.3.2
+
+ * `na.replace` and `na.explicit` applied to a logical value coerces that
+   value to `factor`
+
 ## Version 0.3.1
 
  * Add `NA_logical`

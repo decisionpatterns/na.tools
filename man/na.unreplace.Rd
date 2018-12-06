@@ -25,13 +25,13 @@ na.implicit(x, values)
 be set to \code{NA}.}
 }
 \description{
-Change values to NAs, ie make explicit \code{NAs} back to \code{NA}
+Change values to \code{NA}s, ie make explicit \code{NAs} back to \code{NA}
 }
 \details{
 \code{na.unreplace} replaces \code{values} by \code{NA}. It is meant to be nearly inverse
 operation to \code{na_replace} (and \code{na_explicit}). It can be used on both atomic
-and recursive objects. Unlike  \code{na.replace} however, \code{values} express the
-values that if matched are set to \code{NA}.  It is basically:\preformatted{x[ x %in% values ] <- NA
+and recursive objects. Unlike  \code{na.replace} however, \code{values } express the
+values that if matched are set to \code{NA}.  It is basically:\preformatted{x[ x \%in\% values ] <- NA
 }
 
 \code{na.unreplace} is a S3 method that can be used to defince additional

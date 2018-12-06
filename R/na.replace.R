@@ -27,6 +27,8 @@
 #' `levels(x)` will be added. They are appended silently unless 
 #' `getOption('verbose')==TRUE` in which a message reports the added levels.
 #' 
+#' If `x` is **logical**, replacing with a non-logical value, e.g. using 
+#' `na.explicit` will cause the type to change to factor.
 #' 
 #' **Param: `.na`**
 #' 
@@ -80,7 +82,13 @@
 #'   na.replace(fct, "z")  # z b c d z  -- level z added
 #'   na.replace(fct, letters[1:5] )
 #'   na.replace(fct)
-#'      
+#'   
+#'   # Logical 
+#'   x <- c(TRUE, FALSE, NA)
+#'   na.replace(x, .na=TRUE )
+#'   na.replace(x, .na="MISSING")
+#'   na.explicit(x)    
+#'   
 #'  \dontrun{
 #'    na.replace( rep(NA,3), rep(NA,3) )
 #'  }
@@ -186,6 +194,22 @@ na.replace.factor <- function( x, .na=NA_explicit_, ... ) {
 na.replace.character <- function( x, .na=NA_explicit_, ... ) 
   na.replace.default(x, .na )
 
+#' @export 
+na.replace.logical <- function( x, .na=NA_explicit_, ... ) {
+  
+  if( ! any_na(x) ) return(x)
+  
+  if( is.logical(.na) ) { 
+    x[ is.na(x) ] <- .na 
+    return(x)
+  }
+  
+  x <- as.factor(x)
+  levels(x) <-unique( c(levels(x), .na) )
+  x[ is.na(x) ] <- .na
+  x
+  
+}
 
   
 #' @rdname na.replace

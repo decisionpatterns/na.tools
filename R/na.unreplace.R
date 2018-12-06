@@ -1,6 +1,6 @@
 #' na.unreplace
 #' 
-#' Change values to NAs, ie make explicit `NAs` back to `NA`
+#' Change values to `NA`s, ie make explicit `NAs` back to `NA`
 #' 
 #' @param x object
 #' @param values values that are (or can be coerced to) `class(x)` that are to 

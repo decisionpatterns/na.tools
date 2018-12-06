@@ -4,8 +4,8 @@
 \alias{coerce_safe}
 \title{coerce_safe}
 \usage{
-coerce_safe(object, class, alert = stop, ..., alert_irreversible = alert,
-  alert_na = alert)
+coerce_safe(object, class, alert = stop, ...,
+  alert_irreversible = alert, alert_na = alert)
 }
 \arguments{
 \item{object}{to be coerced}
