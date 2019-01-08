@@ -8,30 +8,31 @@
 \alias{na.implicit}
 \title{na.unreplace}
 \usage{
-na.unreplace(x, values)
+na.unreplace(x, pattern)
 
-\method{na.unreplace}{default}(x, values = NULL)
+\method{na.unreplace}{default}(x, pattern = NULL)
 
-\method{na.unreplace}{character}(x, values = c("NA", NA_explicit_))
+\method{na.unreplace}{character}(x, pattern = c("NA", NA_explicit_))
 
-\method{na.unreplace}{factor}(x, values = c("NA", NA_explicit_))
+\method{na.unreplace}{factor}(x, pattern = c("NA", NA_explicit_))
 
-na.implicit(x, values)
+na.implicit(x, pattern)
 }
 \arguments{
 \item{x}{object}
 
-\item{values}{values that are (or can be coerced to) \code{class(x)} that are to
-be set to \code{NA}.}
+\item{pattern}{Either a stringr pattern suchs a \code{\link[stringr:regex]{stringr::regex()}} or a
+charcter vector of values to match and can be coerced to \code{class(x)}. These
+will  be set to \code{NA}.}
 }
 \description{
-Change values to \code{NA}s, ie make explicit \code{NAs} back to \code{NA}
+Change pattern to \code{NA}s, ie make explicit \code{NAs} back to \code{NA}
 }
 \details{
-\code{na.unreplace} replaces \code{values} by \code{NA}. It is meant to be nearly inverse
+\code{na.unreplace} replaces \code{pattern} by \code{NA}. It is meant to be nearly inverse
 operation to \code{na_replace} (and \code{na_explicit}). It can be used on both atomic
-and recursive objects. Unlike  \code{na.replace} however, \code{values } express the
-values that if matched are set to \code{NA}.  It is basically:\preformatted{x[ x \%in\% values ] <- NA
+and recursive objects. Unlike  \code{na.replace} however, \code{pattern } express the
+pattern that if matched are set to \code{NA}.  It is basically:\preformatted{x[ x \%in\% pattern ] <- NA
 }
 
 \code{na.unreplace} is a S3 method that can be used to defince additional
@@ -46,10 +47,12 @@ methods for other objects.
  df <- data.frame( char=c('A', 'NA', 'C', NA_explicit_), num=1:4 ) 
  na.unreplace(df)
  
+ na.unreplace( c("A", "NA", "N/A"), regex( "n.a", ignore_case=TRUE ) )
  
 }
 \seealso{
 \itemize{
 \item \code{\link[=na.replace]{na.replace()}}
+\item \code{\link[stringr:detect]{stringr::detect()}}
 }
 }

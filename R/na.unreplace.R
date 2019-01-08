@@ -1,20 +1,21 @@
 #' na.unreplace
 #' 
-#' Change values to `NA`s, ie make explicit `NAs` back to `NA`
+#' Change pattern to `NA`s, ie make explicit `NAs` back to `NA`
 #' 
 #' @param x object
-#' @param values values that are (or can be coerced to) `class(x)` that are to 
-#'        be set to `NA`.
+#' @param pattern Either a stringr pattern suchs a [stringr::regex()] or a 
+#'   charcter vector of values to match and can be coerced to `class(x)`. These
+#'   will  be set to `NA`.
 #' 
 #' @details 
 #' 
-#' `na.unreplace` replaces `values` by `NA`. It is meant to be nearly inverse 
+#' `na.unreplace` replaces `pattern` by `NA`. It is meant to be nearly inverse 
 #'  operation to `na_replace` (and `na_explicit`). It can be used on both atomic 
-#'  and recursive objects. Unlike  `na.replace` however, `values ` express the 
-#'  values that if matched are set to `NA`.  It is basically:
+#'  and recursive objects. Unlike  `na.replace` however, `pattern ` express the 
+#'  pattern that if matched are set to `NA`.  It is basically:
 #'  
 #'  ```
-#'  x[ x %in% values ] <- NA
+#'  x[ x %in% pattern ] <- NA
 #'  ````
 #'  
 #'  `na.unreplace` is a S3 method that can be used to defince additional 
@@ -22,7 +23,8 @@
 #' 
 #' @seealso 
 #' 
-#'  * [na.replace()]
+#'  - [na.replace()]
+#'  - [stringr::detect()]
 #'  
 #' @examples 
 #' 
@@ -33,47 +35,52 @@
 #'  df <- data.frame( char=c('A', 'NA', 'C', NA_explicit_), num=1:4 ) 
 #'  na.unreplace(df)
 #'  
+#'  na.unreplace( c("A", "NA", "N/A"), regex( "n.a", ignore_case=TRUE ) )
 #'  
+#' @importFrom stringr str_detect
 #' @export 
 
-na.unreplace <- function( x, values ) 
+na.unreplace <- function( x, pattern ) 
   UseMethod('na.unreplace')
 
 #' @rdname na.unreplace
 #' @export
-na.unreplace.default <- function(x, values=NULL) 
-  if( is.recursive(x) ) .na.unreplace.recursive(x, values ) else
-  .na.unreplace.atomic( x, values )
+na.unreplace.default <- function(x, pattern=NULL) 
+  if( is.recursive(x) ) .na.unreplace.recursive(x, pattern ) else
+  .na.unreplace.atomic( x, pattern )
 
-.na.unreplace.recursive <- function(x,values=NULL) {
+.na.unreplace.recursive <- function(x,pattern=NULL) {
   for( i in 1:length(x) ) 
-    x[[i]] <- na.unreplace( x[[i]], values )  
+    x[[i]] <- na.unreplace( x[[i]], pattern )  
   x
 }
 
-.na.unreplace.atomic <- function(x, values=NULL ) {
-  x[ x %in% values ] <- NA
+.na.unreplace.atomic <- function(x, pattern=NULL ) {
+  if( is(pattern, "pattern") ) 
+    x[ str_detect(x, pattern) ] <- NA else 
+    x[ x %in% pattern ] <- NA
   x
 }
 
 
 #' @rdname na.unreplace
 #' @export
-na.unreplace.character <- function( x, values=c("NA", NA_explicit_) ) {
-  if( is.null(values) )
-    values <- c("NA", NA_explicit_) 
-  
-  x[ x %in% values ] <- NA
+na.unreplace.character <- function( x, pattern=c("NA", NA_explicit_) ) {
+
+  if( is(pattern, "pattern") ) 
+    x[ str_detect(x, pattern) ] <- NA else 
+    x[ x %in% pattern ] <- NA
   x
 }
 
 #' @rdname na.unreplace
 #' @export
-na.unreplace.factor <- function( x, values=c("NA", NA_explicit_) ) {
-  if( is.null(values) )
-    values <- c("NA", NA_explicit_) 
+na.unreplace.factor <- function( x, pattern=c("NA", NA_explicit_) ) {
   
-  x[ x %in% values ] <- NA
+  if( is(pattern, "pattern") ) 
+    x[ str_detect(x, pattern) ] <- NA else 
+    x[ x %in% pattern ] <- NA
+  
   x
 }
 
