@@ -1,6 +1,7 @@
 ## TODO ##
 
- - [ ] 
+ - [x] na.unreplace should except regular expressions 
+       other things to do replacement
 
  - [ ] `rlang::is_na` conflicts with `na.tools::is_na`
 
