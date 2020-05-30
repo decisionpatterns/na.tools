@@ -73,6 +73,19 @@ qc <- function (...)
 # @author decision patterns / christopher brown 
 # Taken from the dimensional package with permission  
 # 
+# nb. bizarro-pipe
+# 
 
-most_freq <- function (x, na.action = na.pass) 
-  as(names(which.max(table(na.action(x), useNA = "always"))), class(x))
+most_freq <- function (x, na.action = na.pass) {
+  
+  x ->.;
+  na.action(.) ->.;
+  table(., useNA = "always") ->.;
+  which.max(.) ->.;
+  names(.) ->.;
+  
+  if( is.factor(x) )            # Exception for factors since you cannot 
+    . else as(., class(x) )     # coerce the character from table into 
+                                # class(x), we just use the name  
+
+}

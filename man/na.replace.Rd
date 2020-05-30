@@ -51,7 +51,7 @@ If \code{x} is \strong{logical}, replacing with a non-logical value, e.g. using
 
 If a \strong{scalar}, each missing value of \code{x} is replaced by \code{na}.
 
-If a \strong{vector}, \code{.na} must have length(x)\code{. Missing values of }x\code{are replaced  by corresponding elements of}.na\code{.  Recycling values of }.na\code{is not  allowed. An error will be thrown in the event that}length(.na)\code{is not}1\code{or}length(x)\code{.}
+If a \strong{vector}, \code{.na} must have length(x)\verb{. Missing values of }x\verb{are replaced  by corresponding elements of}.na\verb{.  Recycling values of }.na\verb{is not  allowed. An error will be thrown in the event that}length(.na)\verb{is not}1\code{or}length(x)\code{.}
 
 If a \strong{function}, \code{x} is transformed by .na` with:\preformatted{     .na(x, ...)
 }

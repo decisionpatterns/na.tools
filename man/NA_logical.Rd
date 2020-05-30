@@ -4,7 +4,9 @@
 \name{NA_logical}
 \alias{NA_logical}
 \title{NA_logical}
-\format{An object of class \code{logical} of length 1.}
+\format{
+An object of class \code{logical} of length 1.
+}
 \usage{
 NA_logical
 }

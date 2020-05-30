@@ -4,7 +4,9 @@
 \name{NA_explicit_}
 \alias{NA_explicit_}
 \title{NA_explicit_}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 NA_explicit_
 }
